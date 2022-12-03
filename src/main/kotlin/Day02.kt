@@ -31,7 +31,6 @@ fun day02a(input: List<String>): Int {
 
 }
 
-
 fun day02b(input: List<String>): Int {
     val pairs = getPairs(input)
 
