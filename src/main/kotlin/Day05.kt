@@ -12,7 +12,7 @@ import java.util.*
  1   2   3   4   5   6   7   8   9
  */
 
-fun getStacks(): List<Stack<Char>> {
+private fun getStacks(): List<Stack<Char>> {
     val stacks: List<String> =
         listOf("TQVCDSN", "FVM", "MHNPDWQF", "FTRQD", "BVHQNMFR", "QWPNGFC", "TCLRFW", "SNZT", "NHQRJDSM")
 
@@ -26,14 +26,14 @@ fun getStacks(): List<Stack<Char>> {
     }
 }
 
-fun getInstructions(input: List<String>) = input.map {
+private fun getInstructions(input: List<String>) = input.map {
     val itemsToMove = it.drop(5).split(" ").first().toInt()
     val from = it.split(" to ").first().split(" ").last().toInt()
     val to = it.split(" to ").last().toInt()
     Triple(itemsToMove, from, to)
 }
 
-fun day05a(input: List<String>): String {
+private fun part1(input: List<String>): String {
     val stacks = getStacks()
     getInstructions(input).forEach { instruction ->
         for (i in 0 until instruction.first) {
@@ -44,7 +44,7 @@ fun day05a(input: List<String>): String {
     return stacks.map { it.lastElement() }.joinToString("")
 }
 
-fun day05b(input: List<String>): String {
+private fun part2(input: List<String>): String {
     val stacks = getStacks()
     getInstructions(input).forEach { instruction ->
         val itemsRemoved = mutableListOf<Char>()
@@ -60,6 +60,6 @@ fun day05b(input: List<String>): String {
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day05.txt")
-    println(day05a(input))
-    println(day05b(input))
+    println(part1(input))
+    println(part2(input))
 }

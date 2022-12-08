@@ -1,14 +1,14 @@
-fun dayXXa(input: List<String>): Int {
+private fun part1(input: List<String>): Int {
     return 0
 }
 
 
-fun dayXXb(input: List<String>): Int {
+private fun part2(input: List<String>): Int {
     return 0
 }
 
 fun main() {
     val input = loadFile("./src/main/kotlin/DayXX.txt")
-    println(dayXXa(input))
-    println(dayXXb(input))
+    println(part1(input))
+    println(part2(input))
 }

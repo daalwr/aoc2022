@@ -1,4 +1,4 @@
-fun getElfCaloriesSortedDescending(input: List<String>): List<Int> {
+private fun getElfCaloriesSortedDescending(input: List<String>): List<Int> {
     var currentElf = 0
     val allElves = mutableListOf<Int>()
 
@@ -14,11 +14,11 @@ fun getElfCaloriesSortedDescending(input: List<String>): List<Int> {
     return allElves.sortedDescending()
 }
 
-fun day01a(input: List<String>): Int = getElfCaloriesSortedDescending(input).max()
-fun day01b(input: List<String>): Int = getElfCaloriesSortedDescending(input).take(3).sum()
+private fun part1(input: List<String>): Int = getElfCaloriesSortedDescending(input).max()
+private fun part2(input: List<String>): Int = getElfCaloriesSortedDescending(input).take(3).sum()
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day01.txt")
-    println(day01a(input))
-    println(day01b(input))
+    println(part1(input))
+    println(part2(input))
 }

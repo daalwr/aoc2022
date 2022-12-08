@@ -1,7 +1,7 @@
 private fun getGrid(input: List<String>) =
     input.map { it.toCharArray().map { char -> char.digitToInt() } }
 
-private fun day08a(input: List<String>): Int {
+private fun part1(input: List<String>): Int {
 
     val treesVisible = mutableSetOf<Pair<Int, Int>>()
     val grid = getGrid(input)
@@ -37,7 +37,7 @@ private fun day08a(input: List<String>): Int {
 }
 
 
-private fun day08b(input: List<String>): Int {
+private fun part2(input: List<String>): Int {
     val g = getGrid(input)
 
     return (1 until g.size - 1).flatMap { r ->
@@ -61,6 +61,6 @@ private fun day08b(input: List<String>): Int {
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day08.txt")
-    println(day08a(input))
-    println(day08b(input))
+    println(part1(input))
+    println(part2(input))
 }

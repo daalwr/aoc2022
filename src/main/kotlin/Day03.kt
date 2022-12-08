@@ -5,7 +5,7 @@ private fun getItemScore(item: Char): Int =
         item.code - 65 + 27
     }
 
-fun day03a(input: List<String>): Int =
+private fun part1(input: List<String>): Int =
     input.sumOf { line ->
         val first = line.subSequence(0, line.length / 2)
         val second = line.subSequence(line.length / 2, line.length)
@@ -14,7 +14,7 @@ fun day03a(input: List<String>): Int =
     }
 
 
-fun day03b(input: List<String>): Int =
+private fun part2(input: List<String>): Int =
     (0 until input.size / 3).sumOf { i ->
         val one = input[i * 3]
         val two = input[i * 3 + 1]
@@ -25,6 +25,6 @@ fun day03b(input: List<String>): Int =
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day03.txt")
-    println(day03a(input))
-    println(day03b(input))
+    println(part1(input))
+    println(part2(input))
 }

@@ -5,13 +5,13 @@ private fun getRangesFromInput(line: String): Pair<List<Int>, List<Int>> {
     return Pair(a, b)
 }
 
-fun day04a(input: List<String>): Int =
+private fun part1(input: List<String>): Int =
     input.count { line ->
         val (a, b) = getRangesFromInput(line)
         (a[0] <= b[0] && a[1] >= b[1]) || (b[0] <= a[0] && b[1] >= a[1])
     }
 
-fun day04b(input: List<String>): Int =
+private fun part2(input: List<String>): Int =
     input.count { line ->
         val (a, b) = getRangesFromInput(line)
         (a[0] < b[1] && a[1] >= b[0]) || (a[1] > b[0] && a[0] <= b[1]) || (a[0] == a[1] && a == b)
@@ -19,6 +19,6 @@ fun day04b(input: List<String>): Int =
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day04.txt")
-    println(day04a(input))
-    println(day04b(input))
+    println(part1(input))
+    println(part2(input))
 }

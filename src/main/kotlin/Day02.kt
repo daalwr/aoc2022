@@ -3,7 +3,7 @@ private fun getPairs(input: List<String>) = input.map { x ->
     Pair(row[0], row[1])
 }
 
-fun day02a(input: List<String>): Int {
+private fun part1(input: List<String>): Int {
     val pairs = getPairs(input)
 
     return pairs.sumOf { pair ->
@@ -31,7 +31,7 @@ fun day02a(input: List<String>): Int {
 
 }
 
-fun day02b(input: List<String>): Int {
+private fun part2(input: List<String>): Int {
     val pairs = getPairs(input)
 
     return pairs.sumOf { pair ->
@@ -61,6 +61,6 @@ fun day02b(input: List<String>): Int {
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day02.txt")
-    println(day02a(input))
-    println(day02b(input))
+    println(part1(input))
+    println(part2(input))
 }

@@ -17,7 +17,7 @@ private fun calculateSize(directory: Directory): Long =
         }
     }
 
-fun createDirectoryTree(input: List<String>): Directory {
+private fun createDirectoryTree(input: List<String>): Directory {
     val rootDirectory = Directory("root", mutableListOf())
     val directoryStack = ArrayDeque<Directory>(listOf(rootDirectory))
 
@@ -48,7 +48,7 @@ fun createDirectoryTree(input: List<String>): Directory {
     return rootDirectory
 }
 
-fun day07a(input: List<String>): Long {
+private fun part1(input: List<String>): Long {
     val rootDirectory = createDirectoryTree(input)
     var result = 0L
     val queue = ArrayDeque<Directory>()
@@ -72,7 +72,7 @@ fun day07a(input: List<String>): Long {
     return result
 }
 
-fun day07b(input: List<String>): Long {
+private fun part2(input: List<String>): Long {
     val rootDirectory = createDirectoryTree(input)
     val diskSpace = 70000000L
     val requiredFreeSpace = 30000000L
@@ -104,6 +104,6 @@ fun day07b(input: List<String>): Long {
 
 fun main() {
     val input = loadFile("./src/main/kotlin/Day07.txt")
-    println(day07a(input))
-    println(day07b(input))
+    println(part1(input))
+    println(part2(input))
 }
