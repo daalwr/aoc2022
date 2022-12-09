@@ -13,7 +13,6 @@ private fun getInstructions(input: List<String>) = input.map {
 }
 
 private fun part1(input: List<String>): Int {
-
     val visited = mutableSetOf<Pair<Int, Int>>()
     visited.add(Pair(0, 0))
 
