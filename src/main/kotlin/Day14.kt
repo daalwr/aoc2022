@@ -98,6 +98,7 @@ private fun part1(input: List<String>): Int {
             count++
         }
     }
+    printPicture(grid)
 
     return count
 }
@@ -145,6 +146,8 @@ private fun part2(input: List<String>): Int {
             sandFlowing = false
         }
     }
+
+    printPicture(grid)
 
     return count
 }
